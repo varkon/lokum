@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
+import os
 
 from pathlib import Path
 
@@ -31,11 +32,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'grappelli',
-    'filebrowser',
-    'tinymce',
-    'bootstrap4',
-
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,11 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.flatpages',
     # 3rd-party apps that oscar depends on
-    'widget_tweaks',
-    'haystack',
-    'treebeard',
-    'sorl.thumbnail',
-    'django_tables2',
 ]
 
 MIDDLEWARE = [
