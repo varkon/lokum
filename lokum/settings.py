@@ -38,8 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.flatpages',
-    # 3rd-party apps that oscar depends on
 ]
 
 MIDDLEWARE = [
