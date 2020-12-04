@@ -26,7 +26,7 @@ SECRET_KEY = 'wx952@=p@*z+w#=ay4l&l&px%2*_qoq32hbrt(k9js2ic)jm_f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['lokum.dp.ua', 'localhost', '127.0.0.1']
 
 
 # Application definition
