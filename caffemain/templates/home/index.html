@@ -1,0 +1,41 @@
+{% extends "main-layout.html" %}
+{% load static %}
+
+{% block content %}
+{# Hero Section #}
+    <div class="news-page clearfix">
+    <div class="row">
+        <div class="col text-center ">
+            <h1>Наше меню</h1>
+            <div class="col-lg-6 col-md-6 text-center ">
+                <a href="{% static 'images/menu_ru.pdf' %}"><h4>Меню</h4><img width="128px" src="{% static 'images/uk-flag.png' %}" /></a>
+
+            </div>
+            <div class="col-lg-6 col-md-6 text-center ">
+                <a href="{%  static 'images/menu_tu.pdf' %}"><h4>Menü</h4><img width="90px" src="{% static 'images/tu-flag.png' %}"></a>
+            </div>
+        </div>
+    </div>
+        <div class="row">
+    <div class="col text-center">
+        <h2>Вы можете сделать заказ по телефону: | Telefonla sipariş verebilirsiniz:</h2>
+        <h3><a href="tel:+380675633196">+380 93 1233434</a></h3>
+    </div>
+        </div>
+        <div class="row" >
+            <div class="col-lg-6 col-md-6 mx-auto">
+                <iframe style="position: relative;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d786.5059731709274!2d35.047018567360105!3d48.466501863836946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dbe3119e05209b%3A0xe35a0cd98406acbe!2z0J3QsNCy0YDRg9C3!5e0!3m2!1sru!2scz!4v1607253288141!5m2!1sru!2scz" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+             <div class="col-lg-6 col-md-6 mx-auto">
+            <img style="position: relative;" height="450px" src="{% static 'images/lokum_enter.JPG' %}">
+             </div>
+            </div>
+        </div>
+        <div class="row">
+     <div class="col text-center ">
+        <h2>Сайт находится в разработке и и планируется к запуску 13 декабря 2020 года.</h2>
+         <img src="{% static 'images/under-construction.png' %}">
+     </div>
+        </div>
+    </div>
+{% endblock %}
