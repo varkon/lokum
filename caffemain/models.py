@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
-from tinymce.models import HTMLField
-from filebrowser.fields import FileBrowseField
+# from tinymce.models import HTMLField
+# from filebrowser.fields import FileBrowseField
 from .apps import transliterate
 
 
