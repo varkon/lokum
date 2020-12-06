@@ -1,8 +1,8 @@
 from django.apps import AppConfig
 from django.db import models
 from django.utils import timezone
-from tinymce.models import HTMLField
-from filebrowser.fields import FileBrowseField
+# from tinymce.models import HTMLField
+# from filebrowser.fields import FileBrowseField
 
 class LokumAppConfig(AppConfig):
     name = 'lokum'
