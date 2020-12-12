@@ -12,8 +12,8 @@
     {% endblock head_favicon %}
     {% block head_meta %}
     {% block head_meta_charset %}
-    <meta http-equiv="Content-Type"
-          content="text/html; charset=utf-8"/>
+   <!-- <meta http-equiv="Content-Type"
+          content="text/html; charset=utf-8"/> -->
     {% endblock head_meta_charset %}
     {% block head_meta_contentlanguage %}
     <meta http-equiv="Content-Language" value="uk"/>
@@ -21,21 +21,67 @@
     {# % block head_meta_viewport % #}
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
     {#% endblock head_meta_viewport % #}
     {% endblock head_meta %}
 
 
     {% load static %}
 
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" media="all">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-grid.css' %}" media="all">
-    <link href="{% static 'css/site.css' %}"
-          rel="stylesheet" media="all">
-
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<!-- Site CSS -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 
 <body>
 {# Navigation Menu #}
+<!-- Start header -->
+<header class="top-navbar">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container">
+				<a class="navbar-brand" href="index.html">
+					<img src="{% static 'images/logo256.png' %}" alt="LOKUM Breakfest & grill" />
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbars-rs-food">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
+						<li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+						<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Pages</a>
+							<div class="dropdown-menu" aria-labelledby="dropdown-a">
+								<a class="dropdown-item" href="reservation.html">Reservation</a>
+								<a class="dropdown-item" href="stuff.html">Stuff</a>
+								<a class="dropdown-item" href="gallery.html">Gallery</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Blog</a>
+							<div class="dropdown-menu" aria-labelledby="dropdown-a">
+								<a class="dropdown-item" href="blog.html">blog</a>
+								<a class="dropdown-item" href="blog-details.html">blog Single</a>
+							</div>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
 <div id="to_top" class="container-fluid header">
     <div class="header-top">
 
@@ -43,49 +89,9 @@
             <a href="/"><img  src="{% static 'images/logo256.png' %}" alt="LOKUM Breakfest & grill"></a>
         </div>
     </div>
-  <!--  <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-        <a class="navbar-brand" href="/">Home</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-        <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav mr-auto"> -->
-           <!-- <li class="nav-item {% if 'patriarch' in request.path %}active{% endif%}">
-                <a class="nav-link" href="/patriarch">Патріарх</a>
-            </li> -->
-           <!-- <li class="nav-item {% if 'kennels' in request.path %}active{% endif%}">
-                <a class="nav-link" href="/kennels">Питомники</a>
-            </li>
-            <li class="nav-item {% if '/studbooks' in request.path %}active{% endif%}">
-                <a  class="nav-link" href="/studbooks">Родословные</a>
-            </li>
-            <li class="nav-item {% if '/selling' in request.path %}active{% endif%}">
-                <a  class="nav-link" href="/selling">Продам</a>
-            </li>
-            <li class="nav-item {% if '/news' in request.path %}active{% endif%}">
-                <a  class="nav-link" href="/news">Новости</a>
-            </li>
-             <li class="nav-item {% if '/articles' in request.path %}active{% endif%}">
-                <a  class="nav-link" href="/articles">Статьи и документы</a>
-	     </li> -->
-       <!--     <li class="nav-item {% if '/articles' in request.path %}active{% endif%}">
-                <a  class="nav-link" href="/articles">Статті</a>
-            </li>-->
-         <!--   <li class="nav-item {% if '/about' in request.path %}active{% endif%}">
-                <a  class="nav-link" href="/about">Контакти</a>
-            </li>
-            <li class="nav-item {% if '/volunteers' in request.path %}active{% endif%}">
-                <a  class="nav-link" href="/volunteers">Нужна помощь</a>
-            </li>
 
-        </ul>
-         <form class="form-inline mt-2 mt-md-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Шукати" aria-label="Шукати">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Пошук</button>
-        </form> -->
-<!-- </div>
-    </nav> -->
 </div> <!-- container-fluid header -->
+<!-- End header -->
     {# The Document Body #}
     <div class="cntnt">
 
@@ -95,31 +101,110 @@
     </div> <!--center-->
 
 
-<div class="container-fluid footer"><div class="row wrapper-footer">
-<!--    <div class="col-sm-6 hidden-xs footer-left-col"><div class="row"><div class="col-sm-4">
-        <ul class="list-unstyled footer-links">-->
-    <!--<li><a href="/patriarch">Патріарх</a></li>-->
-    <!--        <li><a href="/news">Новини</a></li><li>
-                <a href="/articles">Статті</a></li></ul></div>
-        <div class="col-sm-4">
-            <ul class="list-unstyled footer-links">
-            <li><a href="https://www.cerkva.info/documents">Документи</a></li>
-                <li><a href="http://vydavnytstvo.org.ua/kalendar.html">Календар</a></li>
-                <li><a href="https://www.cerkva.info/books?category=23">Бібліотека</a></li></ul></div>
-        <div class="col-sm-4"><ul class="list-unstyled footer-links">
-    </li><li><a href="/about">Контакти</a></li><li><a href="/benefactors">Благодійникам</a></li></ul></div></div></div><div class="col-sm-6 col-xs-12 footer-right-col"><div><div class="col-sm-10 col-sm-offset-2 col-xs-12"><div class="row pull-right"><div class="footer-social"><a class="fb icons-fb" href="https://www.facebook.com/%D0%9A%D0%B8%D1%97%D0%B2%D1%81%D1%8C%D0%BA%D0%B8%D0%B9-%D0%9F%D0%B0%D1%82%D1%80%D1%96%D0%B0%D1%80%D1%85%D0%B0%D1%82-%D0%A3%D0%9F%D0%A6-%D0%9A%D0%9F-814918141953632/"></a></div><div class="footer-social"><a class="tw icons-tw" href="https://twitter.com/Cerkva_Info"></a></div><div class="footer-social"><a class="yt icons-yt" href="https://www.youtube.com/channel/UCMqs_q8XhsIje-kMBubzHJw"></a></div><div class="footer-social"><a class="user" href="https://www.facebook.com/PatriarchPhilaret/"></a></div></div></div></div></div><div class="col-xs-12 copyright"><div class="row"><div class="col-sm-6 col-xs-12 cr">© 2017 – 2019 Среднеазиатская овчарка</div><div class="col-sm-6 col-xs-12">
-    <div class="by-dc pull-right"><span>Розроблено </span><a href="http://varkon.biz/" target="_blank">Varkon Ltd</a>
-    </div></div></div></div></div> -->
-    </div>
+<!-- Start Contact info -->
+	<div class="contact-imfo-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<i class="fa fa-volume-control-phone"></i>
+					<div class="overflow-hidden">
+						<h4>Phone</h4>
+						<p class="lead">
+							+01 123-456-4590
+						</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<i class="fa fa-envelope"></i>
+					<div class="overflow-hidden">
+						<h4>Email</h4>
+						<p class="lead">
+							yourmail@gmail.com
+						</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<i class="fa fa-map-marker"></i>
+					<div class="overflow-hidden">
+						<h4>Location</h4>
+						<p class="lead">
+							800, Lorem Street, US
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Contact info -->
+
+	<!-- Start Footer -->
+	<footer class="footer-area bg-f">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6">
+					<h3>About Us</h3>
+					<p>Integer cursus scelerisque ipsum id efficitur. Donec a dui fringilla, gravida lorem ac, semper magna. Aenean rhoncus ac lectus a interdum. Vivamus semper posuere dui, at ornare turpis ultrices sit amet. Nulla cursus lorem ut nisi porta, ac eleifend arcu ultrices.</p>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<h3>Opening hours</h3>
+					<p><span class="text-color">Monday: </span>Closed</p>
+					<p><span class="text-color">Tue-Wed :</span> 9:Am - 10PM</p>
+					<p><span class="text-color">Thu-Fri :</span> 9:Am - 10PM</p>
+					<p><span class="text-color">Sat-Sun :</span> 5:PM - 10PM</p>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<h3>Contact information</h3>
+					<p class="lead">Ipsum Street, Lorem Tower, MO, Columbia, 508000</p>
+					<p class="lead"><a href="#">+01 2000 800 9999</a></p>
+					<p><a href="#"> info@admin.com</a></p>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<h3>Subscribe</h3>
+					<div class="subscribe_form">
+						<form class="subscribe_form">
+							<input name="EMAIL" id="subs-email" class="form_input" placeholder="Email Address..." type="email">
+							<button type="submit" class="submit">SUBSCRIBE</button>
+							<div class="clearfix"></div>
+						</form>
+					</div>
+					<ul class="list-inline f-social">
+						<li class="list-inline-item"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+						<li class="list-inline-item"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+						<li class="list-inline-item"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+						<li class="list-inline-item"><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+						<li class="list-inline-item"><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<p class="company-name">All Rights Reserved. &copy; 2018 <a href="#">Yamifood Restaurant</a> Design By :
+					<a href="https://html.design/">html design</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</footer>
+	<!-- End Footer -->
+
+	<a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+
+	<!-- ALL JS FILES -->
+	<script type="text/x-script.sh" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/x-script.sh" src="js/popper.min.js"></script>
+	<script type="text/x-script.sh" src="js/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+	<script type="text/x-script.sh" src="js/jquery.superslides.min.js"></script>
+	<script type="text/x-script.sh" src="js/images-loded.min.js"></script>
+	<script type="text/x-script.sh" src="js/isotope.min.js"></script>
+	<script type="text/x-script.sh" src="js/baguetteBox.min.js"></script>
+	<script type="text/x-script.sh" src="js/form-validator.min.js"></script>
+    <script type="text/x-script.sh" src="js/contact-form-script.js"></script>
+    <script type="text/x-script.sh" src="js/custom.js"></script>
 </body>
-{# Set of blocks that can be used to display JavaScript files #}
-{% block footer_javascript %}
-{% block footer_javascript_site %}
-<script src="{% static 'js/jquery.min.js' %}"></script>
-<script src="{% static 'js/bootstrap.js' %}"></script>
-<!-- <script src="{{ STATIC_URL }}js/app.js"></script> -->
-{% endblock footer_javascript_site %}
-{% block footer_javascript_section %}{% endblock footer_javascript_section %}
-{% block footer_javascript_page %}{% endblock footer_javascript_page %}
-{% endblock footer_javascript %}
 </html>
