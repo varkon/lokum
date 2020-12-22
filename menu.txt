@@ -1,0 +1,105 @@
+Салаты (Salatalar)Кашик салат (Kaşık salata)200/60
+Чобан салат (Çoban salata)200/60
+Гавурдаш салат (Gavur dağ salata)240/125
+Салат сезонный ( Mevsim salata)200/60
+Салат греческий (Yunan salata)240/125
+Маринованый лук(soğan salatası)40/40
+Теплый салат с курицей (Tavuk külbastı salatası)350/180
+Тёплый салат с говядиной (Dana külbastı salatası)350/180
+
+Закуски (Mezeler)
+Джаджик (Cacık)200/60
+Хумус (Humus)200/100
+Томатная острая закуска (Açılı ezme)200/60
+Хайдари (Haydari)200/80
+Мухамара(gözlenmiş patlıcan salatası)200/100
+Йогурт (Yoğurt)200/50
+Соления турецкие (Turşu çeşitleri)300/50
+Тарелка сырная (Peynir tabağı)300/150
+Тарелка фруктовая(Meyve tabağı)400/100
+
+Горячии блюда (Sulu Yemekler)
+Фасоль с мясом (Güveçte etli kuru fasulye)250/100
+Нут с мясом (Güveçte etli nohut)250/100
+Мусака из  баклажан(Patlıcan musakka)200/100
+Фасоль стручковая с мясом (Etli taze fasulye)250/100
+Печень по албански (Arnavut ciğeri)250/100
+Фермерский кебаб ( Çiftlik kebabı)250/100
+Измир кефтэ (İzmir köfte)250/100
+Отварная баранина (Kuzu haşlama)250/100
+Куриные ножки (Fırında but 300/100
+
+Гарниры/Pilavlar
+Турецкий пилав/рис (Pirinç pilavı)180/40
+Турецкий пилав с овощами/булгур (Bulgur pilavı)180/40
+
+Завтраки/Kahvaltı
+Завтрак по турецки(брынза,сыр твердый,оливки черные, оливки зелёные,варенное яйцо, мёд,повидло,масло сливочное, помидор, огурец,халва, орехи, зелень,(Kahvaltı tabağı)Beyaz peynir, kaşar peyniri, çeçil peyniri,bal, tereyağı, reçel, haşlanmış yumurta, domates, salatalık, yeşil zeytin, siyah zeytin, helva,ceviz, maydanoz (500/150)
+Яичница с суджуком (Sahanda sucuklu yumurta)200/100
+Тост с сыром (Beyaz peynirli tost)200/100
+Тост с сыром+суджук (Kaşarlı sucuklu tost)200/100
+Тост с сыром+мясо (Kavurmalı kaşarlı tost)200/125
+
+Турецкие безалкогольные напитки (İçecekler)
+Айран (Ayran)200/20
+Шалгам (Şalgam)
+Лимонад (Liminata)250/30
+Минеральная фруктовая вода (Meyveli soda)200/25
+Минеральная вода газированая (Gazoz)200/25
+Минеральная вода слабогазированая (Sade soda)200/25
+Вода без газа (Su)500/20
+
+Горячии напитки ( Sıcak içecekler)
+Чай по турецки (Çay)15
+Кофе по турецки (Türk kahvesi)30
+
+Десерты (Tatlılar)
+Баклава с фисташками (Fıstıklı baklava)100/75
+Баклава с орехами (Cevizli baklava)100/60
+Сютлач(Fırın sütlaç)200/50
+Шекер- парэ(Şeker pare)100/50
+Рэвани (Revani)100/50
+Кюнэфэ (Künefe)200/85
+Магнолия (Magnoliya)200/60
+
+Дюрюм/Dürümler
+Адана Дюрюм (Adana dürüm)150/90/125
+Урфа Дюрюм (Urfa dürüm)150/80/125
+Дюрюм из печени (Ciğer dürüm)170/100/125
+Дюрюм из баранины (Kuzu şiş dürüm)150/90/125
+Дюрюм из телятины (Dana şiş dürüm)150/90/125
+Дюрюм куриный (Tavuk şiş dürüm)150/90/125
+
+Пидэ (турецкая пицца) (Pideler)
+Пидэ сырное (Kaşarlı pide)200/120
+Пидэ сырное+суджук (Kaşarlı sucuklu pide)240/140
+Пидэ (Сыр+мясной фарш+яйцо)(kıymalı yumurtalı pide (240/180)
+Кушбашилы пидэ (kuşbaşılı kaşarlı pide)240/160
+Лахмаджун (Lahmacun)170/80
+
+Супы/Çorbalar
+Суп келле-пача (Kelle paça çorbası)250/100
+Суп эзогелин (Ezogelin çorbası)250/60
+Суп чечевичный (mercimek çorbası)250/60
+Суп куриный с вермишелью (tavuklu  şehriye çorbası)250/75
+Суп Яйля (Yayla çorbası)250/60
+
+Хлеб/Ekmek
+Турецкая лепешка (Tırnaklı pide) 100/10
+Лаваш (Lavaş)10
+
+Мясо на мангале (Izgara çeşitleri)
+Адана кебаб (Adana kebap porsiyon)150/70/150/150
+Урфа кебаб (Urfa kebab porsiyon)150/70/150/150
+Шашлык из бараньей печени (Ciğer şiş porsiyon)150/70/150/150
+Шашлык из баранины (Kuzu şiş porsiyon)150/70/150/150
+Шашлык из телятины (Dana şiş porsiyon)150/70/150/150
+Шашлык куриный (Tavuk şiş porsiyon)150/70/150/135
+Крылья гриль (kanat ızgara porsiyon)150/70/150/135
+Перзола из баранины (Kuzu pirzola porsiyon)250/70/150/225
+Кофтэ на гриле (köfte ızgara porsiyon)150/70/150/150
+Кебаб из томатов и мяса (domates kebabı porsiyon)150/70/150/150
+Кебаб из баклажанов и мяса (patlıcan kebabı porsiyon (150/70/150/150
+Кебаб Алиназик (Alinazik kebabı)150/150/50/250
+Кебаб ассорти (Karışık kebabı)400/70/150/350
+Килисская сковородка (Kilis Tava)150/200/50/135
