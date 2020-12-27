@@ -20,4 +20,5 @@ def about(request):
         return render(request,'about.html', {'about_model': None})
     return render(request,'about.html', {'about_model':about_model})
 
-
+def change_language(request):
+    request.path

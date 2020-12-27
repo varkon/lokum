@@ -1,0 +1,91 @@
+{% extends "main-layout.html" %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+    <!-- Start All Pages -->
+    <div class="all-page-title page-breadcrumb">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>{% trans 'Menu' %}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End All Pages -->
+    <!-- Start Menu -->
+    <div class="menu-box">
+        <div class="container">
+            <!-- <div class="row">
+                <div class="col-lg-12">
+                    <div class="heading-title text-center">
+                        <h2>{% trans 'Menu' %}</h2>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+                    </div>
+                </div>
+            </div> -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="special-menu text-center">
+                        <div class="button-group filter-button-group">
+
+                            <button {% if not category %} class="active" {% endif %} data-filter="*">
+                                <a href="{% url "shop:product_list" %}">{% trans "All" %}</a>
+                            </button>
+                            {% for c in categories %}
+                                <button {% if category.slug == c.slug %}class="active"{% endif %}>
+                                    <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+                                </button>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row special-list">
+
+                {% for product in products %}
+                    <div class="col-lg-4 col-md-6 special-grid drinks">
+                        <div class="gallery-single fix">
+                            <a href="{{ product.get_absolute_url }}">
+                                <img class="img-fluid" width="350px" src="
+
+                                        {% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
+                            </a>
+                            <div class="why-text">
+
+                                <a href="{{ product.get_absolute_url }}"><h4>
+                                    {{ product.name }}</h4></a>
+
+                                <h5>{{ product.price }} {% trans 'UAN' %}</h5>
+                                <form action="{% url 'cart:cart_add' product.id %}" method="post">
+                                    <input name="quantity" value="1" type="hidden">
+                                    {% csrf_token %}
+                                    <input type="submit" value="{% trans "Add to cart" %}">
+                                </form>
+                                {{ product.description|linebreaks }}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- End Menu -->
+    <!-- Start QT -->
+    <div class="qt-box qt-background">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto text-left">
+                    <p class="lead ">
+                        " If you're not the one cooking, stay out of the way and compliment the chef. "
+                    </p>
+                    <span class="lead">Michael Strahan</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End QT -->
+
+{% endblock %}

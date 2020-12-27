@@ -11,11 +11,10 @@ class Category(TranslatableModel):
     translations = TranslatedFields(
         name=models.CharField(max_length=200,
                               db_index=True),
-        slug=models.SlugField(max_length=200,
-                              db_index=True,
-                              unique=True)
     )
-
+    slug = models.SlugField(max_length=200,
+                            db_index=True,
+                            unique=True, default='')
     class Meta:
         # ordering = ('name',)
         verbose_name = 'category'
