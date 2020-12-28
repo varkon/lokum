@@ -3,7 +3,7 @@
 {% load i18n %}
 {% block content %}
     <div class = 'container'>
-    <div class="row">
+    <div class="row special-list">
     <div class="product-detail">
     <h1>{{ product.name }}</h1>
     <h2>
@@ -19,13 +19,13 @@
     </form>
     </div>
     </div>
-    <div class="row">
+    <div class="row special-list">
     <img width='40%' src="{% if product.image %}{{ product.image.url }}{% else %}
     {% static "img/no_image.png" %}{% endif %}">
 
     {{ product.description|linebreaks }}
     </div>
-    <div class="row">
+    <div class="row special-list">
     {% if recommended_products %}
       <div class="recommendations">
         <h3>{% trans "People who bought this also bought" %}</h3>
