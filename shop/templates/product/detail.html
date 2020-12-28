@@ -11,16 +11,21 @@
         {{ product.category }}
       </a>
     </h2>
-    <p class="price">${{ product.price }}</p>
+    <p class="price">{{ product.price }} UAH</p>
     <form action="{% url "cart:cart_add" product.id %}" method="post">
       {{ cart_product_form }}
       {% csrf_token %}
       <input type="submit" value="{% trans "Add to cart" %}">
     </form>
+    </div>
+    </div>
+    <div class="row">
     <img width='40%' src="{% if product.image %}{{ product.image.url }}{% else %}
     {% static "img/no_image.png" %}{% endif %}">
 
     {{ product.description|linebreaks }}
+    </div>
+    <div class="row">
     {% if recommended_products %}
       <div class="recommendations">
         <h3>{% trans "People who bought this also bought" %}</h3>
@@ -36,6 +41,7 @@
       </div>
     {% endif %}
   </div>
+    </div>
     </div>
     </div>
 {% endblock %}
