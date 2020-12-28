@@ -80,7 +80,7 @@
                         <td>{% trans "Total" %}</td>
                         <td colspan="4"></td>
                         <td class="num">
-                            ${{ cart.get_total_price_after_discount|floatformat:2 }}
+                            {{ cart.get_total_price_after_discount|floatformat:2 }} UAH
                         </td>
                     </tr>
                     </tbody>

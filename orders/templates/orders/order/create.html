@@ -13,10 +13,11 @@
         </div>
     </div>
     <!-- End All Pages -->
+    <div class="blog-box">
     <div class="container">
 
             <div class="row">
-                <div class="order-info">
+                <div class="col-lg-4 col-md-4 order-info">
     <h3>{% trans "Your order" %}</h3>
     <ul>
       {% for item in cart %}
@@ -36,12 +37,13 @@
     </ul>
     <p>{% trans "Total" %}: {{ cart.get_total_price_after_discount|floatformat:2 }} UAH</p>
   </div>
-
+<div class="col-lg-6 col-md-6">
   <form method="post" class="order-form">
     {{ form.as_p }}
     <p><input type="submit" value="{% trans "Place order" %}"></p>
     {% csrf_token %}
   </form>
             </div>
+    </div>
     </div>
 {% endblock %}

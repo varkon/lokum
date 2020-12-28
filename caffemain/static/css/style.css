@@ -1417,9 +1417,10 @@ a.button, input[type="submit"] {
     color:#fff;
     background:#5993bb;
     border-radius:4px;
-    padding:10px 20px;
+    padding:10px 20px ;
     font-size:14px;
     border:0;
+	margin-top: 20px;
 }
 
 a.button.light {
