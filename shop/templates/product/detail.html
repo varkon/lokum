@@ -16,7 +16,7 @@
     <div class="about-section-box">
     <div class = 'container'>
     <div class="row special-list">
-    <div class="product-detail">
+    <div class="col-lg-12 product-detail">
     <h1>{{ product.name }}</h1>
     <h2>
       <a href="{{ product.category.get_absolute_url }}">
@@ -32,10 +32,12 @@
     </div>
     </div>
     <div class="row special-list">
+    <div class="col-lg-12">
     <img width='40%' src="{% if product.image %}{{ product.image.url }}{% else %}
     {% static "img/no_image.png" %}{% endif %}">
 
     {{ product.description|linebreaks }}
+    </div>
     </div>
     <div class="row special-list">
     {% if recommended_products %}
