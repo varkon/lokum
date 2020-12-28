@@ -3,8 +3,6 @@
 {% load i18n %}
 {% block content %}
     <div class="product-detail">
-    <img src="{% if product.image %}{{ product.image.url }}{% else %}
-    {% static "img/no_image.png" %}{% endif %}">
     <h1>{{ product.name }}</h1>
     <h2>
       <a href="{{ product.category.get_absolute_url }}">
@@ -17,13 +15,16 @@
       {% csrf_token %}
       <input type="submit" value="{% trans "Add to cart" %}">
     </form>
+    <img width='40%' src="{% if product.image %}{{ product.image.url }}{% else %}
+    {% static "img/no_image.png" %}{% endif %}">
+
     {{ product.description|linebreaks }}
     {% if recommended_products %}
       <div class="recommendations">
         <h3>{% trans "People who bought this also bought" %}</h3>
         {% for p in recommended_products %}
           <div class="item">
-            <a href="{{ p.get_absolute_url }}">
+            <a   href="{{ p.get_absolute_url }}">
               <img src="{% if p.image %}{{ p.image.url }}{% else %}
               {% static  "img/no_image.png" %}{% endif %}">
             </a>
