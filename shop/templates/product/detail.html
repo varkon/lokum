@@ -16,7 +16,7 @@
     <div class="about-section-box">
     <div class = 'container'>
     <div class="row special-list">
-    <div class="col-lg-12 product-detail">
+    <div class="col-lg-6 col-md-6 product-detail">
     <h1>{{ product.name }}</h1>
     <h2>
       <a href="{{ product.category.get_absolute_url }}">
@@ -29,19 +29,19 @@
       {% csrf_token %}
       <input type="submit" value="{% trans "Add to cart" %}">
     </form>
+        {{ product.description|linebreaks }}
     </div>
-    </div>
-    <div class="row special-list">
-    <div class="col-lg-12">
-    <img width='40%' src="{% if product.image %}{{ product.image.url }}{% else %}
+    <div class="col-lg-6 col-md-6">
+
+    <img width='40%'class='img-fluid' src="{% if product.image %}{{ product.image.url }}{% else %}
     {% static "img/no_image.png" %}{% endif %}">
 
-    {{ product.description|linebreaks }}
+
     </div>
     </div>
     <div class="row special-list">
     {% if recommended_products %}
-      <div class="recommendations">
+      <div class="col-lg-12 recommendations">
         <h3>{% trans "People who bought this also bought" %}</h3>
         {% for p in recommended_products %}
           <div class="item">
