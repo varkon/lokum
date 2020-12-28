@@ -101,12 +101,13 @@
                     </div>
                 {% endif %}
 
-                <p>{% trans "Apply a coupon" %}:</p>
+              <!--  <p>{% trans "Apply a coupon" %}:</p>
                 <form action="{% url "coupons:apply" %}" method="post">
                     {{ coupon_apply_form }}
                     <input type="submit" value="Apply">
                     {% csrf_token %}
-                </form>
+                </form> -->
+
 
                 <p class="text-right">
                     <a href="{% url "shop:product_list" %}" class="button light">{% trans "Continue shopping" %}</a>

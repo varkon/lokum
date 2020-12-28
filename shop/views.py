@@ -27,7 +27,7 @@ def product_detail(request, id, slug):
     language = request.LANGUAGE_CODE
     product = get_object_or_404(Product,
                                 translations__language_code=language,
-                                translations__slug=slug,
+                                slug=slug,
                                 available=True)
     cart_product_form = CartAddProductForm()
 
