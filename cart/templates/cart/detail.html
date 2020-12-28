@@ -55,8 +55,8 @@
                                         {% csrf_token %}
                                     </form>
                                 </td>
-                                <td class="num">${{ item.price }}</td>
-                                <td class="num">${{ item.total_price }}</td>
+                                <td class="num">{{ item.price }} UAH</td>
+                                <td class="num">{{ item.total_price }} UAH</td>
                             </tr>
                         {% endwith %}
                     {% endfor %}
@@ -64,7 +64,7 @@
                         <tr class="subtotal">
                             <td>{% trans "Subtotal" %}</td>
                             <td colspan="4"></td>
-                            <td class="num">${{ cart.get_total_price|floatformat:2 }}</td>
+                            <td class="num">{{ cart.get_total_price|floatformat:2 }} UAH</td>
                         </tr>
                         <tr>
                             {% blocktrans with code=cart.coupon.code discount=cart.coupon.discount %}
@@ -72,7 +72,7 @@
                             {% endblocktrans %}
                             <td colspan="4"></td>
                             <td class="num neg">
-                                - ${{ cart.get_discount|floatformat:2 }}
+                                - {{ cart.get_discount|floatformat:2 }} UAH
                             </td>
                         </tr>
                     {% endif %}

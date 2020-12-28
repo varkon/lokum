@@ -80,8 +80,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'lokum.wsgi.application'
 
 # Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -164,3 +162,8 @@ BRAINTREE_PRIVATE_KEY = ''  # Private key
 REDIS_HOST = 'localhost'
 REDIS_PORT = 6379
 REDIS_DB = 1
+
+try:
+    from local_settings import *
+except ImportError:
+    pass

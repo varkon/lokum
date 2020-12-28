@@ -1,0 +1,54 @@
+{% extends "main-layout.html" %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+    <!-- Start header -->
+	<div class="all-page-title page-breadcrumb">
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1>About Us</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End header -->
+
+	<!-- Start About -->
+	<div class="about-section-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-6">
+					<img src="{% static 'images/about-img.jpg' %}" alt="" class="img-fluid">
+				</div>
+				<div class="col-lg-6 col-md-6 text-center">
+					<div class="inner-column">
+						<h1>{% trans 'Добро пожаловать'%} <span> Lokum Grill & Breakfast</span></h1>
+						<h4>Little Story</h4>
+						<p>Ресторан-кафе турецкой кухни в центре города - идеальное место для людей, которые любят все
+виды кебабов, дёнеров, сытно и вкусно покушать, ценят высокий уровень сервиса и хотят чувствовать
+себя, как дома.</p>
+						<p>В Lokum представлен большой выбор блюд, которые жарят на мангале и подают с булгуром,
+запеченными овощами и аджикой. В печи готовят пиде - закрытые лодочки с мясом и сыром,
+ароматный лаваш. Если есть желание попробовать, что-то легкое, то предлагаем обратить внимание
+на чечевичный суп. А попробовав турецкую пряную колбасу, вы не останетесь равнодушным. Утром
+подают традиционный турецкий завтрак с оливками, овощами, ассорти сыров и чаем. На десерт
+лакомства, приготовленные в Lokum профессиональным поваром из Турции.</p>
+                        <p>Потрясающие сочетания различных вкусов, обилие свежих овощей и фруктов, способы тепловой
+обработки, при которых продукты не теряют своих полезных качеств, делают блюда турецкой кухни
+невероятно вкусными и полезными.
+Турецкий ресторан - кафе Lokum при приготовлении блюд использует исключительно халяльные
+ингредиенты, привезенные прямо из Турции.</p>
+						<a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Reservation</a>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="inner-pt">
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End About -->
+{% endblock %}

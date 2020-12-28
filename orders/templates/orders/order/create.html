@@ -22,7 +22,7 @@
       {% for item in cart %}
         <li>
           {{ item.quantity }}x {{ item.product.name }}
-          <span>${{ item.total_price|floatformat:2 }}</span>
+          <span>{{ item.total_price|floatformat:2 }} UAH</span>
         </li>
       {% endfor %}
       {% if cart.coupon %}
@@ -30,11 +30,11 @@
           {% blocktrans with code=cart.coupon.code discount=cart.coupon.discount %}
             "{{ code }}" ({{ discount }}% off)
           {% endblocktrans %}
-          <span class="neg">- ${{ cart.get_discount|floatformat:2 }}</span>
+          <span class="neg">- {{ cart.get_discount|floatformat:2 }} UAH</span>
         </li>
       {% endif %}
     </ul>
-    <p>{% trans "Total" %}: ${{ cart.get_total_price_after_discount|floatformat:2 }}</p>
+    <p>{% trans "Total" %}: {{ cart.get_total_price_after_discount|floatformat:2 }} UAH</p>
   </div>
 
   <form method="post" class="order-form">

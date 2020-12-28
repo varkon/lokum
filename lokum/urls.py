@@ -23,6 +23,7 @@ urlpatterns = i18n_patterns(
     path('admin/', admin.site.urls),
     path('cart/', include('cart.urls', namespace='cart')),
     path('', include('caffemain.urls')),
+    path('contact/', include('caffemain.urls')),
 
     path('orders/', include('orders.urls')),
     #, namespace='orders'

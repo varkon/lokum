@@ -1354,7 +1354,7 @@ tbody tr.subtotal {
 }
 
 thead th, tbody tr.total {
-    background:#5993bb;
+    background:#e19c43;
     color:#fff;
     font-weight:bold;
 }
@@ -1411,6 +1411,20 @@ form p label, form p input {
 
 .order-info span {
     float:right;
+}
+
+a.button, input[type="submit"] {
+    color:#fff;
+    background:#5993bb;
+    border-radius:4px;
+    padding:10px 20px;
+    font-size:14px;
+    border:0;
+}
+
+a.button.light {
+    color:#666;
+    background:#ededed;
 }
 
 
