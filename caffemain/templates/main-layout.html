@@ -52,7 +52,7 @@
 <header class="top-navbar">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="{% url "caffemain:index" %}">
                 <img src="{% static 'images/logo128.png' %}" alt="LOKUM Breakfest & grill"/>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food"
@@ -64,44 +64,28 @@
                     <li class="nav-item active"><a class="nav-link" href="/">{% trans 'Home' %}</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url "shop:product_list" %}">{% trans 'Menu' %}</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="/about">{% trans 'About' %}</a></li>
-                    {#                    <li class="nav-item dropdown">#}
-                    {#                        <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Pages</a>#}
-                    {#                        <div class="dropdown-menu" aria-labelledby="dropdown-a">#}
-                    {#                            <a class="dropdown-item" href="reservation.html">Reservation</a>#}
-                    {#                            <a class="dropdown-item" href="stuff.html">Stuff</a>#}
-                    {#                            <a class="dropdown-item" href="gallery.html">Gallery</a>#}
-                    {#                        </div>#}
-                    {#                    </li>#}
-                    <!--<li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Blog</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown-a">
-                            <a class="dropdown-item" href="blog.html">blog</a>
-                            <a class="dropdown-item" href="blog-details.html">blog Single</a>
-                        </div>
-                    </li> -->
-
-
-                    <li class="nav-item"><a class="nav-link" href="/contact">{% trans 'Contact' %}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url "caffemain:about" %}">{% trans 'About' %}</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link"
+                                            href="{% url "caffemain:contact" %}">{% trans 'Contact' %}</a></li>
                     {% get_current_language as LANGUAGE_CODE %}
                     {% get_available_languages as LANGUAGES %}
                     {% get_language_info_list for LANGUAGES as languages %}
 
-                                {% for language in languages %}
- <li class="nav-item {% if language.code == LANGUAGE_CODE %} active
+                    {% for language in languages %}
+                        <li class="nav-item {% if language.code == LANGUAGE_CODE %} active
                                             {% endif %}">
-{#                         <!--   <button {% if language.code == LANGUAGE_CODE %} class="active" {% endif %} > -->#}
-                                    <a class="nav-link {% if language.code == LANGUAGE_CODE %} active
+                             <a class="nav-link {% if language.code == LANGUAGE_CODE %} active
                                             {% endif %}"
-                                       href="/{{ language.code }}{{ request.get_full_path|slice:'3:' }}"
-                                            >
-                                        <img width="32px" src="{% static 'images/'%}{{language.code}}-flag.png" />
-                                    </a>
-{#                            </button>#}
- </li>
-                                {% endfor %}
+                                  href="/{{ language.code }}{{ request.get_full_path|slice:'3:' }}"
+                        >
+                            <img width="32px" src="{% static 'images/' %}{{ language.code }}-flag.png"/>
+                        </a>
 
-</li>
+                        </li>
+                    {% endfor %}
+
+                    </li>
 
                     <li class="nav-item cart">
                         <!-- <div class="nav-item cart"> -->
@@ -120,7 +104,7 @@
                                 {% trans "Your cart is empty." %}
                             {% endif %}
                         {% endwith %}
-                        <!--  </div> -->
+
                     </li>
 
 
@@ -143,7 +127,7 @@
             <div class="col-md-4">
                 <i class="fa fa-volume-control-phone"></i>
                 <div class="overflow-hidden">
-                    <h4>Phone</h4>
+                    <h4>{% trans 'Phone' %}</h4>
                     <p class="lead">
                         +380 93 349 09 29
                     </p>
@@ -152,7 +136,7 @@
             <div class="col-md-4">
                 <i class="fa fa-envelope"></i>
                 <div class="overflow-hidden">
-                    <h4>Email</h4>
+                    <h4>{% trans 'Email' %}</h4>
                     <p class="lead">
                         info@lokum.dp.ua
                     </p>
@@ -161,7 +145,7 @@
             <div class="col-md-4">
                 <i class="fa fa-map-marker"></i>
                 <div class="overflow-hidden">
-                    <h4>Location</h4>
+                    <h4>{% trans 'Location' %}</h4>
                     <p class="lead">
                         49000, Glinki 18, Dnipro
                     </p>
@@ -177,27 +161,31 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-6">
-                <h3>О нас</h3>
-                <p>Ресторан-кафе турецкой кухни в центре города - идеальное место для людей, которые любят все виды кебабов,  дёнеров, сытно и вкусно покушать, ценят высокий уровень сервиса и хотят чувствовать себя, как дома.
-
-Турецкий ресторан - кафе Lokum при приготовлении блюд использует исключительно халяльные ингредиенты, привезенные прямо из Турции.
-</p>
+                <h3>{% trans 'About' %}</h3>
+                <p>{% blocktrans %}
+                    A Turkish restaurant-cafe in the city center is the perfect place for people who love all kinds
+                     kebabs, doners, a hearty and tasty meal, they appreciate a high level of service and want to feel
+                     like at home.
+                     Turkish Restaurant - Cafe Lokum uses exclusively halal
+                     ingredients brought directly from Turkey
+                    {% endblocktrans %}
+                </p>
             </div>
             <div class="col-lg-3 col-md-6">
-                <h3>Opening hours</h3>
-                <p><span class="text-color">Monday: </span>Closed</p>
-                <p><span class="text-color">Tue-Wed :</span> 9:Am - 7PM</p>
-                <p><span class="text-color">Thu-Fri :</span> 9:Am - 7PM</p>
-                <p><span class="text-color">Sat-Sun :</span> 9:PM - 7PM</p>
+                <h3>{% trans 'Opening hours' %}</h3>
+                <p><span class="text-color">Monday: </span>8:Am - 10:PM</p>
+                <p><span class="text-color">Tue-Wed :</span> 8:Am - 10PM</p>
+                <p><span class="text-color">Thu-Fri :</span> 8:Am - 10PM</p>
+                <p><span class="text-color">Sat-Sun :</span> 8:PM - 10PM</p>
             </div>
             <div class="col-lg-3 col-md-6">
-                <h3>Contact information</h3>
+                <h3>{% trans 'Contact information' %}</h3>
                 <p class="lead">Glinki, 18, Dnipro, 49000</p>
                 <p class="lead"><a href="tel:+380933490929">+380 93 349 09 29</a></p>
                 <p><a href="#"> info@admin.com</a></p>
             </div>
             <div class="col-lg-3 col-md-6">
-                <h3>Subscribe</h3>
+                <h3>{% trans 'Subscribe' %}</h3>
                 <div class="subscribe_form">
                     <form class="subscribe_form">
                         <input name="EMAIL" id="subs-email" class="form_input" placeholder="Email Address..."

@@ -22,8 +22,8 @@ from django.conf.urls.i18n import i18n_patterns
 urlpatterns = i18n_patterns(
     path('admin/', admin.site.urls),
     path('cart/', include('cart.urls', namespace='cart')),
-    path('', include('caffemain.urls')),
-    path('contact/', include('caffemain.urls')),
+    path('', include(('caffemain.urls', 'caffemain'), namespace='caffemain')),
+    path('contact/', include(('caffemain.urls', 'caffemain'), namespace='caffemain')),
 
     path('orders/', include('orders.urls')),
     #, namespace='orders'

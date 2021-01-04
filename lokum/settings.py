@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     # 'payment.apps.PaymentConfig',
     'coupons.apps.CouponsConfig',
     'parler',
-    'caffemain',
+    'caffemain.apps.CaffemainAppConfig',
 ]
 
 MIDDLEWARE = [

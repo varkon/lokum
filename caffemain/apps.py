@@ -4,8 +4,8 @@ from django.utils import timezone
 # from tinymce.models import HTMLField
 # from filebrowser.fields import FileBrowseField
 
-class LokumAppConfig(AppConfig):
-    name = 'lokum'
+class CaffemainAppConfig(AppConfig):
+    name = 'caffemain'
 
 REPLACESYMB = [
     ('.', ''),
