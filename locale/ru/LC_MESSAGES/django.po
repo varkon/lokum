@@ -332,6 +332,14 @@ msgstr "Адрес"
 msgid "city"
 msgstr "Город"
 
+msgid "Delivery"
+msgid "Доставка"
+
+msgid "Pickup"
+msgid "Забрать самому"
+
+
+
 #: .\orders\templates\orders\order\create.html:21
 #, fuzzy
 #| msgid "Your cart"

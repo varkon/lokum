@@ -13,15 +13,18 @@
         </div>
     </div>
     <!-- End All Pages -->
+    <div class="blog-box">
     <div class="container">
 
             <div class="row">
-                <div class="order-info">
+                <div class="col-md-12 col-lg-12 order-info text-center">
     <h1>{% trans "Thank you" %}</h1>
   {% blocktrans  %}
-    <p>Your order has been successfully completed. Your order number is <strong>{{ order_id }}</strong>.</p>
+    <h2>Your order has been successfully completed. Your order number is <strong>{{ order_id }}</strong>.</h2>
   {% endblocktrans %}
 
             </div>
+    </div>
+    </div>
     </div>
 {% endblock %}

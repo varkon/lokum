@@ -330,6 +330,12 @@ msgstr ""
 msgid "city"
 msgstr ""
 
+msgid "Delivery"
+msgid ""
+
+msgid "Pickup"
+msgid ""
+
 #: .\orders\templates\orders\order\create.html:21
 msgid "Your order"
 msgstr ""

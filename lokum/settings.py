@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'coupons.apps.CouponsConfig',
     'parler',
     'caffemain.apps.CaffemainAppConfig',
+    'liqpay'
 ]
 
 MIDDLEWARE = [
@@ -167,3 +168,6 @@ try:
     from local_settings import *
 except ImportError:
     pass
+
+LIQPAY_PUBLIC_KEY = 'sandbox_i80088232110'
+LIQPAY_PRIVATE_KEY = 'sandbox_Oq2gMCtxSdegueqzeYTWs3SQFyhbewmERoEfuciA'

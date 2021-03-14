@@ -15,15 +15,15 @@
     <!-- End All Pages -->
     <div class="blog-box">
     <div class="container">
-
-            <div class="row">
-                <div class="col-lg-4 col-md-4 order-info">
-    <h3>{% trans "Your order" %}</h3>
+        <div class="row">
+                <div class="col-lg-6 col-md-6 order-info text-left">
+    <h2>{% trans "Your order" %}</h2>
     <ul>
       {% for item in cart %}
-        <li>
+        <li><h4>
           {{ item.quantity }}x {{ item.product.name }}
           <span>{{ item.total_price|floatformat:2 }} UAH</span>
+            </h4>
         </li>
       {% endfor %}
       {% if cart.coupon %}
@@ -38,12 +38,31 @@
     <p>{% trans "Total" %}: {{ cart.get_total_price_after_discount|floatformat:2 }} UAH</p>
   </div>
 <div class="col-lg-6 col-md-6">
+    <div class="form-group">
   <form method="post" class="order-form">
-    {{ form.as_p }}
+    {{ form.as_div }}
     <p><input type="submit" value="{% trans "Place order" %}"></p>
     {% csrf_token %}
   </form>
             </div>
     </div>
+        </div> <!-- Row -->
     </div>
+    </div>
+    <script type="text/javascript" defer="true">
+    $(document).ready(function() {
+
+    $('#id_delivery')[0].addEventListener('change', (event) => {
+
+        if ((event.target).options[event.target.selectedIndex].value == 'D') {
+            $('#id_address').show();
+            $('#id_address').val('');
+
+        } else {
+
+            $('#id_address').val ("Pickup");
+        }
+    })
+});
+    </script>
 {% endblock %}

@@ -1,24 +1,38 @@
 from decimal import Decimal
 from django.db import models
+from django.db.models import Case, When
 
 from django.core.validators import MinValueValidator, \
                                    MaxValueValidator, \
                                    RegexValidator
+from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 from shop.models import Product
 from coupons.models import Coupon
 
 
 class Order(models.Model):
+    SELFDELIVERY = 'S'
+    NEEDDELIVERY = 'D'
+
+    DELIVERY_TYPE_CHOICES = [
+        (SELFDELIVERY, _('Pickup')),
+        (NEEDDELIVERY, _('Delivery')),
+    ]
     first_name = models.CharField(_('first name'), max_length=50)
     last_name = models.CharField(_('last name'), max_length=50)
     email = models.EmailField(_('e-mail'))
-    address = models.CharField(_('address'), max_length=250)
+    address = models.CharField(_('address'), max_length=250, blank=True, default='Pickup')
     # postal_code = models.CharField(_('postal code'), max_length=20)
-    phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$',
-                                 message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")
-    phone = models.CharField(validators=[phone_regex], max_length=17, blank=False, null=False)  # validators should be a list
-    city = models.CharField(_('city'), max_length=100)
+    delivery = models.CharField(
+        max_length=1,
+        choices=DELIVERY_TYPE_CHOICES,
+        default=SELFDELIVERY,
+    )
+    phone_regex = RegexValidator(regex=r'^(\+[1-9][0-9]*(\([0-9]*\)|-[0-9]*-))?[0]?[1-9][0-9\- ]*$',
+                                 message="Phone number must be entered in the format: '+38(067)999-99-99' or '067 999 99 99'. Up to 15 digits allowed.")
+    phone = models.CharField(validators=[phone_regex], max_length=19, blank=False, null=False)  # validators should be a list
+    city = models.CharField(_('city'), max_length=100, default='Днепр')
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     paid = models.BooleanField(default=False)
@@ -42,6 +56,7 @@ class Order(models.Model):
         total_cost = sum(item.get_cost() for item in self.items.all())
         return total_cost - total_cost * \
             (self.discount / Decimal(100))
+
 
 
 class OrderItem(models.Model):
