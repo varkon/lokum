@@ -6,18 +6,28 @@ from .models import Order
 
 class OrderCreateForm(forms.ModelForm):
     phone = forms.CharField()
-    required_css_class = 'form-group'
+    required_css_class = 'form-group form-inline '
 
     class Meta:
         model = Order
-        fields = ['first_name', 'last_name', 'email', 'phone',
+
+        widgets={
+            'first_name': forms.TextInput( attrs={'class': 'form-control'}),
+            'last_name': forms.TextInput( attrs={'class': 'form-control'}),
+            'email':forms.TextInput( attrs={'class': 'form-control'}),
+            'phone': forms.TextInput( attrs={'class': 'form-control'}),
+            'delivery':forms.Select(attrs={'class': 'form-control'}),
+            'address':forms.TextInput( attrs={'class': 'form-control'}),
+            'city':forms.TextInput( attrs={'class': 'form-control'}),
+        }
+        fields = ['first_name','last_name', 'email', 'phone',
                   'delivery', 'address',  'city']
 
 
     def as_div(self):
         "Return this form rendered as HTML <p>s."
         return self._html_output(
-            normal_row='<div%(html_class_attr)s><strong>%(label)s</strong><br/> %(field)s%(help_text)s</div>',
+            normal_row='<div class="control-label" %(html_class_attr)s><strong>%(label)s</strong> %(field)s%(help_text)s</div>',
             error_row='%s',
             row_ender='</div>',
             help_text_html=' <span class="helptext">%s</span>',

@@ -9,7 +9,7 @@ from django.template.loader import render_to_string
 from cart.cart import Cart
 from .models import OrderItem, Order
 from .forms import OrderCreateForm
-from django.core.mail import send_mail
+from django.core.mail import mail_admins
 # from .tasks import order_created
 
 
@@ -33,7 +33,10 @@ def order_create(request):
             # launch asynchronous task
             # order_created.delay(order.id)
             # set the order in the session
-            send_mail("Новый заказ на сайте", "На сайте создан новый заказ, проверьте админку!", 'varkonom@gmail.com', ['super.926@ukr.net', 'dr0zd714@gmail.com'])
+            subject = "Новый заказ #", order.id
+            plain_message = "На сайте создан новый заказ под номером #", order.id, " проверьте админку!";
+            html_message = "<h3>Новый заказ</h3><p>На сайте создан новый заказ №", order.id, "</p><p>", order.first_name, "</p><p> ",order.last_name, "</p><p>",order.phone,"</p>"
+            mail_admins(subject, plain_message, fail_silently=True, html_message=html_message )
             request.session['order_id'] = order.id
             # redirect for payment
             return render(request, 'orders/order/created.html', {'order_id': order.id})
